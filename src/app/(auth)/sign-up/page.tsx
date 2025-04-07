@@ -22,8 +22,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { orbitron } from "@/data/font";
 
 const SignUp = () => {
 	const [username, setUsername] = useState("");
@@ -101,15 +99,10 @@ const SignUp = () => {
 		setIsSubmitting(false);
 	};
 	return (
-		<div className="flex justify-center items-start p-12 min-h-[110vh]">
-			<div className="w-full max-w-md p-8 space-y-8 rounded-lg shadow-sm border shadow-gray-500">
+		<div className="flex justify-center items-center p-4 md:p-8 lg:p-12 min-h-screen">
+			<div className="w-full max-w-md p-8 space-y-8 rounded-lg shadow-sm border border-gray-800">
 				<div className="text-center">
-					<h1
-						className={cn(
-							"text-4xl font-extrabold tracking-tight mb-6",
-							orbitron.className
-						)}
-					>
+					<h1 className="text-4xl font-extrabold tracking-tight mb-6 font-orbitron">
 						Join Flickr
 					</h1>
 					<p className="mb-4">
@@ -211,7 +204,7 @@ const SignUp = () => {
 						Already a member ?{" "}
 						<Link
 							href="/sign-in"
-							className="text-blue-600 hover:text-blue-800 hover:underline duration-200"
+							className="text-blue-600 hover:text-blue-500 hover:underline duration-200"
 						>
 							Sign in
 						</Link>

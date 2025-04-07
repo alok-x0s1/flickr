@@ -43,7 +43,6 @@ const Whisper = () => {
 			content: "Can you recommend a good book?",
 		},
 	]);
-	
 
 	const handleSuggestionClick = (content: string) => {
 		form.setValue("content", content);
@@ -97,7 +96,7 @@ const Whisper = () => {
 	};
 
 	return (
-		<div className="flex flex-col min-h-[165vh]">
+		<div className="flex flex-col min-h-screen pt-8">
 			<div className="w-full max-w-2xl p-8 space-y-8 rounded-lg shadow-md mx-auto">
 				<div className="text-center">
 					<h1 className="text-4xl font-extrabold tracking-tight mb-6">
@@ -144,14 +143,14 @@ const Whisper = () => {
 				</Form>
 			</div>
 
-			<div className="w-full flex flex-col mt-12 max-w-5xl p-8 space-y-8 mx-auto">
+			<div className="w-full flex flex-col mt-12 max-w-5xl p-4 md:p-8 space-y-4 md:space-y-8 mx-auto">
 				<Button onClick={handleSuggestNewMessages} className="w-fit">
 					Suggest Messages
 				</Button>
 				<p className="text-left text-base">
 					Click on the below messages to select it.
 				</p>
-				<div className="flex flex-col border border-gray-100 p-6 gap-6 rounded">
+				<div className="flex flex-col border border-gray-600 p-4 md:p-6 gap-4 md:gap-6 rounded">
 					<h3 className="text-xl">Messages</h3>
 					{suggestions.map((suggestion) => (
 						<button
@@ -159,7 +158,7 @@ const Whisper = () => {
 							onClick={() =>
 								handleSuggestionClick(suggestion.content)
 							}
-							className="border px-4 py-2 text-base border-gray-100 rounded text-start hover:bg-white/10 duration-500"
+							className="border px-4 py-2 text-base border-gray-800 rounded text-start hover:bg-white/10 duration-500"
 						>
 							{suggestion.content}
 						</button>
@@ -167,12 +166,12 @@ const Whisper = () => {
 				</div>
 			</div>
 
-			<div className="w-full max-w-5xl p-8 space-y-8 rounded-lg shadow-md mx-auto">
+			<div className="w-full p-4 md:p-8 space-y-4 md:space-y-8 rounded-lg shadow-md mx-auto flex flex-col justify-center items-center">
 				<Separator />
-				<h2 className="text-2xl font-extrabold tracking-tight mb-6 text-center">
+				<h2 className="text-2xl font-extrabold tracking-tight mb-6">
 					Wanna to get experienced by anonymous message feedback ?
 				</h2>
-				<p className="text-start text-base">
+				<p className="text-base max-w-5xl">
 					Share your anonymous messages with friends and family to get
 					feedback on your communication skills, relationships, and
 					overall experience. This can help you improve your

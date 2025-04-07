@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { FloatingNav } from "./floating-nav";
 import { User } from "next-auth";
-import { useTheme } from "next-themes";
+import Link from "next/link";
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { MoonIcon, SunIcon } from "lucide-react";
+	Github,
+	Home,
+	LogInIcon,
+	LogOutIcon,
+	SquareDashedKanban,
+	User2,
+} from "lucide-react";
 
 const Navbar = () => {
 	const { data: session } = useSession();
@@ -22,34 +22,61 @@ const Navbar = () => {
 		username: user?.username || "",
 	};
 
-	const { setTheme } = useTheme();
-
 	return (
 		<>
-			<nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
-				<FloatingNav navbarItems={navbarItems} />
-			</nav>
-			<nav className="fixed top-4 right-4 z-50">
-				<DropdownMenu>
-					<DropdownMenuTrigger asChild>
-						<Button variant="outline" size="icon">
-							<SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-							<MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-							<span className="sr-only">Toggle theme</span>
-						</Button>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent align="end">
-						<DropdownMenuItem onClick={() => setTheme("light")}>
-							Light
-						</DropdownMenuItem>
-						<DropdownMenuItem onClick={() => setTheme("dark")}>
-							Dark
-						</DropdownMenuItem>
-						<DropdownMenuItem onClick={() => setTheme("system")}>
-							System
-						</DropdownMenuItem>
-					</DropdownMenuContent>
-				</DropdownMenu>
+			<nav className="fixed top-4 right-4 z-50 border border-zinc-800 backdrop-blur px-5 py-3 rounded-full">
+				<div className="flex gap-8 font-semibold">
+					<Link
+						href="/"
+						className="hover:scale-110 duration-300 hover:text-blue-500"
+					>
+						<Home />
+					</Link>
+
+					{navbarItems.isLoggedIn && (
+						<>
+							<Link
+								href="/dashboard"
+								className="hover:scale-110 duration-300 hover:text-blue-500"
+							>
+								<SquareDashedKanban />
+							</Link>
+
+							<Link
+								href="/profile"
+								className="hover:scale-110 duration-300 hover:text-blue-500"
+							>
+								<User2 />
+							</Link>
+
+							<Link
+								href="#"
+								onClick={() => signOut()}
+								className="hover:scale-110 duration-300 hover:text-blue-500"
+							>
+								<LogOutIcon />
+							</Link>
+						</>
+					)}
+
+					{!navbarItems.isLoggedIn && (
+						<>
+							<Link
+								href="/sign-in"
+								className="hover:scale-110 duration-300 hover:text-blue-500"
+							>
+								<LogInIcon />
+							</Link>
+						</>
+					)}
+
+					<Link
+						href="https://github.com/alok-x0s1/Flickr"
+						className="hover:scale-110 duration-300 hover:text-blue-500"
+					>
+						<Github />
+					</Link>
+				</div>
 			</nav>
 		</>
 	);

@@ -19,6 +19,7 @@ import { ApiResponse } from "@/types/ApiResponse";
 import axios, { AxiosError } from "axios";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 interface UserData {
@@ -38,6 +39,7 @@ const Profile = () => {
 		messagesCount: 0,
 	});
 	const [isLoading, setIsLoading] = useState(true);
+	const router = useRouter();
 
 	const { toast } = useToast();
 
@@ -55,24 +57,21 @@ const Profile = () => {
 						duration: 1000,
 					});
 				} else {
-					toast({
-						title: "Error",
-						description: response.data.message,
-						duration: 2000,
-					});
+					router.push("/sign-in");
 				}
 			} catch (error) {
 				console.log("Error in getting profile ", error);
 				const axiosError = error as AxiosError<ApiResponse>;
 				let errorMessage = axiosError.response?.data.message;
 
-				toast({
-					title: "Error",
-					description:
-						errorMessage ??
-						"An error occurred while getting profile.",
-					duration: 3000,
-				});
+				// toast({
+				// 	title: "Error",
+				// 	description:
+				// 		errorMessage ??
+				// 		"An error occurred while getting profile.",
+				// 	duration: 3000,
+				// });
+				router.push("/sign-in");
 			}
 			setIsLoading(false);
 		};
@@ -81,7 +80,7 @@ const Profile = () => {
 
 	return (
 		<BackgroundBeamsWithCollision>
-			<div className="w-full min-h-screen flex justify-center items-center">
+			<div className="w-full min-h-screen flex justify-center items-center bg-primaryBgColor">
 				<Card className="w-[350px] min-h-32">
 					{isLoading ? (
 						<div className="flex justify-center items-center w-full h-32">

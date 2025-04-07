@@ -11,18 +11,16 @@ function Footer() {
 							About Flickr
 						</h2>
 						<p className="mb-4">
-							Flickr is a community-driven platform where
-							thoughts meet ideas, and conversations spark
-							creativity. We empower users to share their stories,
-							connect with others, and explore new perspectives in
-							a safe and welcoming environment.
+							Flickr is a community-driven platform where thoughts
+							meet ideas, and conversations spark creativity. We
+							empower users to share their stories, connect with
+							others, and explore new perspectives in a safe and
+							welcoming environment.
 						</p>
 					</div>
 				</div>
 				<div>
-					<h2 className="text-lg font-semibold mb-4">
-						Quick Links
-					</h2>
+					<h2 className="text-lg font-semibold mb-4">Quick Links</h2>
 					<ul>
 						<li className="mb-2">
 							<a
