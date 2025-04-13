@@ -64,13 +64,13 @@ const Profile = () => {
 				const axiosError = error as AxiosError<ApiResponse>;
 				let errorMessage = axiosError.response?.data.message;
 
-				// toast({
-				// 	title: "Error",
-				// 	description:
-				// 		errorMessage ??
-				// 		"An error occurred while getting profile.",
-				// 	duration: 3000,
-				// });
+				toast({
+					title: "Error",
+					description:
+						errorMessage ??
+						"An error occurred while getting profile.",
+					duration: 3000,
+				});
 				router.push("/sign-in");
 			}
 			setIsLoading(false);
@@ -80,7 +80,7 @@ const Profile = () => {
 
 	return (
 		<BackgroundBeamsWithCollision>
-			<div className="w-full min-h-screen flex justify-center items-center bg-primaryBgColor">
+			<div className="w-full py-20 h-screen flex justify-center items-center bg-primaryBgColor">
 				<Card className="w-[350px] min-h-32">
 					{isLoading ? (
 						<div className="flex justify-center items-center w-full h-32">

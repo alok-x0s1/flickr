@@ -125,7 +125,7 @@ const SignUp = () => {
 									<FormControl>
 										<Input
 											type="text"
-											placeholder="John Doe"
+											placeholder="eg. user123"
 											{...field}
 											onChange={(e) => {
 												field.onChange(e);
@@ -160,7 +160,7 @@ const SignUp = () => {
 									<FormControl>
 										<Input
 											type="email"
-											placeholder="johndoe@gmail.com"
+											placeholder="eg. mHx5k@example.com"
 											{...field}
 										/>
 									</FormControl>
@@ -178,7 +178,7 @@ const SignUp = () => {
 									<FormControl>
 										<Input
 											type="password"
-											placeholder="1-johndoePassword"
+											placeholder="eg. password123"
 											{...field}
 										/>
 									</FormControl>

@@ -28,7 +28,7 @@ const words = [
 const Home = () => {
 	return (
 		<main className="flex min-h-screen justify-start items-center flex-col">
-			<div className="flex flex-col justify-center items-center px-4 py-16 lg:py-20 w-full">
+			<div className="flex flex-col justify-center items-center px-4 py-20 w-full">
 				<h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-bold text-center font-orbitron">
 					Flickr_rr...
 				</h1>

@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/components/ui/use-toast";
-import { orbitron } from "@/data/font";
-import { cn } from "@/lib/utils";
 import { Message } from "@/models/userModel";
 import { acceptMessageSchema } from "@/schemas/acceptMessageSchema";
 import { ApiResponse } from "@/types/ApiResponse";
@@ -131,7 +129,7 @@ const Dashboard = () => {
 	};
 
 	return (
-		<div className="my-12 md:mx-8 lg:mx-auto p-6 rounded w-full max-w-6xl pb-16 min-h-screen">
+		<div className="py-20 md:mx-8 lg:mx-auto p-6 rounded w-full max-w-6xl pb-16 min-h-screen">
 			<h1 className="text-4xl font-bold mb-12 font-orbitron">
 				Welcome, {username}!
 			</h1>
