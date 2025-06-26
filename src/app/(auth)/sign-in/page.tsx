@@ -30,8 +30,8 @@ const SignIn = () => {
 	const form = useForm<z.infer<typeof signinSchema>>({
 		resolver: zodResolver(signinSchema),
 		defaultValues: {
-			identifier: "",
-			password: "",
+			identifier: "one@gmail.com",
+			password: "12345678",
 		},
 	});
 

@@ -4,15 +4,15 @@ import {
 	Lobster,
 	Baskervville,
 	Orbitron,
-	Poppins
+	Montserrat
 } from "next/font/google";
 
-export const rubik = Rubik({
+export const montserrat = Montserrat({
 	weight: ["400", "500", "600", "700"],
 	subsets: ["latin"],
 });
 
-export const poppins = Poppins({
+export const rubik = Rubik({
 	weight: ["400", "500", "600", "700"],
 	subsets: ["latin"],
 });

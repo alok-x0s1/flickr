@@ -3,7 +3,7 @@ import "./globals.css";
 import AuthProvider from "@/context/AuthProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
-import { orbitron, poppins } from "@/data/font";
+import { orbitron, montserrat } from "@/data/font";
 
 export const metadata: Metadata = {
 	title: "Flickr_rr.",
@@ -19,7 +19,7 @@ export default function RootLayout({
 		<html lang="en">
 			<AuthProvider>
 				<body
-					className={[orbitron.variable, poppins.className].join(" ")}
+					className={[orbitron.variable, montserrat.className].join(" ")}
 				>
 					<ThemeProvider
 						attribute="class"
