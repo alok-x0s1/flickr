@@ -2,6 +2,13 @@
 
 Flickr is an anonymous feedback application built with Next.js. This app allows users to manage anonymous feedback through a personalized dashboard. Users can share their profile link to receive messages or feedback anonymously, with the ability to accept or decline incoming messages.
 
+```md
+# Test credentials
+
+| Email         | Password |
+| one@gmail.com | 12345678 |
+```
+
 ## Features
 
 -   **Anonymous Messaging:** Receive messages anonymously through a shareable profile link.
